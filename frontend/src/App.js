@@ -2,17 +2,15 @@ import React from "react";
 import './App.css';
 import './components/NavbarMini.css'
 import Navbar from './components/Navbar'
-import Main from './components/Main';
 import NavbarMini from './components/NavbarMini'
-
-
+import HomeScreen from "./components/HomeScreen";
 function App() {
   //when app loads up 
   return(
   <>
       <NavbarMini/>
       <Navbar/>
-      <Main/>
+      <HomeScreen/>
   </>
   );
 }

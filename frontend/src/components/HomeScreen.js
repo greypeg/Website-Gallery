@@ -1,29 +1,22 @@
 import "./HomeScreen.css";
-import Product from "./Product"
-
-
-// Components
-
-
-//Actions
-//import { getProducts as listProducts } from "../redux/actions/productActions";
+import ProductDesktop from "./ProductDesktop"
 
 const HomeScreen = () => {
-  //const dispatch = useDispatch();
-
-  //const getProducts = useSelector((state) => state.getProducts);
-  //const { products, loading, error } = getProducts;
-
-  //(() => {
-    //dispatch(listProducts());
-  //}, [dispatch]);
 
   return (
-    <div className="homescreen">
-      <div className="homescreen__products">
-        <Product/>
-        <Product/>
-        <Product/>
+    <div className="container-fluid pl-0 pr-0">
+      <div className="row">
+        <div className="col-lg-1"></div>
+        <div className="col-lg-3">
+          <ProductDesktop/>
+        </div>
+        <div className="col-lg-3">
+          <ProductDesktop/>
+        </div>
+        <div className="col-lg-3">
+          <ProductDesktop/>
+        </div>
+        <div className="col-lg-1"></div>
       </div>
     </div>
   );

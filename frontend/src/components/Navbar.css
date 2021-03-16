@@ -1,26 +1,55 @@
 .Navbar{
-    background-color: #906449;
+    background-color: white;
     color: #FFFFFF;
+    width: 100%;
+    height: 140px;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
 }
 
 .Navbar .leftSide{
-    color:white;
+    flex:50%;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Navbar .leftSide p{
+    padding:0;
+  }
+  
+.Navbar .leftSide .links{
+    max-height: 80px;   
 }
 
-.links a{
+.Navbar .rightSide .links a{
     text-decoration: underline;
     text-decoration-style: solid;
     font-family: 'Redressed';
-    font-size: 36px;
-    color: white;
+    font-size: 40px;
+    color: black;
+    margin-right:120px;
     text-decoration-skip-ink: none;
 }
-.links a:hover{
+.Navbar .rightSide .links a:hover{
     text-decoration: none;
 }
 .Navbar .rightSide{
+    flex:50%;
     color:black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding:0;
+}
+.rightSide input{
+    width:220px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    padding-left:15px;
+    color:#C29372;
 }
 .rightSide button{
     width: 70px;
@@ -33,22 +62,3 @@
     cursor: pointer;
     border-radius: 6px;
 }
-
-.centerSide, .rightSide{
-    padding-top: .5%;
-    padding-bottom: .5%;
-}
-.centerSide .iconify{
-    margin-left: -8%;
-    height: auto;
-}
-.centerSide input{
-    height: 50px;
-    width: 550px;
-    border: none;
-    border-radius: 10px;
-    
-    background-color: white;
-}
-/* background: url('https://api.iconify.design/bx:bx-search.svg') no-repeat right center / contain; */
-.Navbar .centerSide .iconify { color:gray;}

@@ -1,11 +1,17 @@
 .ProductContainer{
-    width:510px;
-    height:348px;
-    padding: 1rem;
-    display: flex;
     background-color: white;
-    margin: 8px auto;
-    flex-direction: column;
-    justify-content: space-between;
     box-shadow: 0px 0px 4px rgba(69, 69, 69, 0.5);
+}
+
+.PictureStyle{
+    width:516px;
+    height:auto;
+    resize:both;
+}
+
+.TextStyle{
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #454545;
+    background-blend-mode: lighten;
 }

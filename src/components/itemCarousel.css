@@ -1,0 +1,26 @@
+
+@media (min-width:1700px) and (max-width: 1921px)
+{
+    .Carousel{
+        max-height: 360px;
+        max-width: 1500px;
+    }
+    
+    .CarouselContent{
+        max-height: 360px;
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1922px) and (max-width: 2561px)
+{
+    .Carousel{
+        max-height: 360px;
+        max-width: 1980px;
+    }
+    
+    .CarouselContent{
+        max-height: 360px;
+        max-width: 1980px;
+    }
+}

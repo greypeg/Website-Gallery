@@ -2,9 +2,9 @@ import React from "react";
 import './App.css';
 import './components/NavbarMini.css'
 import Navbar from './components/Navbar'
-import Main from './components/Main';
 import NavbarMini from './components/NavbarMini'
-
+import HomeScreen from "./components/HomeScreen";
+import ItemCarousel from "./components/itemCarousel";
 
 function App() {
   //when app loads up 
@@ -12,7 +12,8 @@ function App() {
   <>
       <NavbarMini/>
       <Navbar/>
-      <Main/>
+      <ItemCarousel/>
+      <HomeScreen/>
   </>
   );
 }

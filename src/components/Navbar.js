@@ -1,40 +1,41 @@
 import React from 'react'
 import './Navbar.css'
 import logoe from '../images/logoe.png';
+import {Carousel, Container, Row, Col} from 'react-bootstrap'
 
 
 function Navbar() {
 
 
     return (
-        <div className="Navbar container-fluid">
-            <div className="row">
-                <div className="col-lg-1"></div>
-                <div className="col-lg-2 leftSide">
+        <Container fluid className="Navbar">
+            <Row>
+                <Col lg={1}></Col>
+                <Col lg={2} className="leftSide">
                     <a href="/">
-                        <img src={logoe} alt="Logo" style={{ height: 73 }}/>
+                        <img src={logoe} alt="Logo" className="logo"/>
                     </a>
-                </div>
-                <div className="col-lg-4 centerSide">
+                </Col>
+                <Col lg={4} className="centerSide">
                     <input type="search" placeholder="  Search..."></input>
                     <span className="iconify" data-icon="bx:bx-search" data-inline="false"></span>
-                </div>
-                <div className="col-lg-4 rightSide links">
-                    <div className="row">
-                        <div className="col-lg align-self-end">
+                </Col>
+                <Col lg={4} className="rightSide links">
+                    <Row>
+                        <Col lg={true} className="align-self-end">
                             <a href="/home">Home</a>
-                        </div>
-                        <div className="col-lg align-self-end">
+                        </Col>
+                        <Col lg={true} className="align-self-end">
                             <a href="/aboutus" style={{marginLeft: '-12%'}}>About us</a>
-                        </div>
-                        <div className="col-lg align-self-end">
+                        </Col>
+                        <Col lg={true} className="align-self-end">
                             <a href="/contact">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-1"></div>
-            </div>
-        </div>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col lg={1}></Col>
+            </Row>
+        </Container>
     )
 }
 

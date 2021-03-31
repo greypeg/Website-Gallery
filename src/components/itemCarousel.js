@@ -3,20 +3,21 @@ import React from 'react'
 import bag1 from "../images/bag1.jpg"
 import bag2 from "../images/bag2.jpg"
 import bag3 from "../images/bag3.jpg"
-import {Carousel} from 'react-bootstrap'
+import {Carousel, Container, Row, Col} from 'react-bootstrap'
 import useWindowDimensions from './windowDimensions'
 
-function ItemCarousel()
+const ItemCarousel = () =>
 {
     const {height, width} = useWindowDimensions();
 
-    if (width > 976)
         return(
-            <div className="container-fluid pt-5">
-                <div className="row">
-                    <div className="col-lg-1"></div>
-                    <div className="col-lg-10">
-                        <Carousel hover="true">
+            <Container fluid className="pt-5 d-none d-lg-block"> 
+                <Row>
+                    <Col lg={1}></Col>
+                    <Col lg={10}>
+                        <Row>
+                            <Col>
+                            <Carousel hover="true">
                             <Carousel.Item>
                                 <img
                                 className="d-block w-100 CarouselContent"
@@ -53,15 +54,14 @@ function ItemCarousel()
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>
-                    </div>
-                    <div className="col-lg-1"></div>
-                </div>
-            </div>
+                            </Col>
+                        </Row>
+                        
+                    </Col>
+                    <Col lg={1}></Col>
+                </Row>
+            </Container>
             
-        )
-    else
-        return(
-            <div id="noElement"></div>
         )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import logoe from '../images/logoe.png';
-import {Carousel, Container, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 
 
 function Navbar() {

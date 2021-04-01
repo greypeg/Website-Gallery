@@ -15,7 +15,7 @@ function App() {
       <Navbar/>
       <ItemCarousel/>
       <SortFilter/>
-      {/* <HomeScreen/> */}
+      <HomeScreen/>
   </>
   );
 }

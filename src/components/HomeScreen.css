@@ -10,25 +10,45 @@
     margin-left: 8px;
   }
 
-  @media (min-width: 1700px) and (max-width: 1921px)
-  {
-    .rowSize{
-      width: 100%;
-      max-width: 1920px;
-    }
-  }
 
-  @media (min-width: 1922px) and (max-width: 2560px)
+  @media only screen and (max-width: 2560px)
   {
     .rowSize
     {
       width:100%;
       max-width: 2560px;
     }
+
+    .homescreen__products {
+      margin-top: 1%;
+      margin-left: .75%;
+    }
   }
 
-  .homescreen__products {
-    margin-top: 1%;
-    margin-left: 1.2%;
+  @media only screen and (max-width: 1920px)
+  {
+    .rowSize{
+      width: 100%;
+      max-width: 1920px;
+    }
+
+    .homescreen__products {
+      margin-top: 1.5%;
+      margin-left: 1%;
+    }
   }
+
+  @media only screen and (max-width: 1366px)
+  {
+    .rowSize{
+      width: 100%;
+      max-width: 1366px;
+    }
+
+    .homescreen__products {
+      margin-top: 1%;
+      margin-left: 1.75%;
+    }
+  }
+
 

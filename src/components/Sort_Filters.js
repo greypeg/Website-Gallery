@@ -88,11 +88,11 @@ const SortFilter = () =>
                     <Row>
                         <Col xl={2} lg={3}>
                             <Row sm={12} noGutters={false}>
-                                <Col xl={3} lg={4} className="mt-2">
+                                <Col xl={4} lg={4} className="mt-2">
                                     <span>{filters_label}</span>
                                 </Col>
                                 <Col lg={1}></Col>
-                                <Col lg={4}>
+                                <Col lg={4} className="filterButton">
                                     <DropdownButton id="Filters" variant="secondary" title={GenreTitle}>
                                         {GenreDropdowns}
                                     </DropdownButton>
@@ -102,8 +102,8 @@ const SortFilter = () =>
                         <Col xl={7} lg={6}></Col>
                         <Col xl={2} lg={2}>
                             <Row sm={12} className="ml-xl-3">
-                                <Col xl={5} className="d-none d-xl-block"></Col>
-                                <Col xl={3} lg={6} className="mt-2">
+                                <Col xl={3} className="d-none d-xl-block"></Col>
+                                <Col xl={5} lg={6} className="mt-2 sortText">
                                     <span>{sort_label}</span>
                                 </Col>
                                 <Col xl={4} lg={4}>

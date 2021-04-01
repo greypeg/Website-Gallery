@@ -1,24 +1,25 @@
 import "./HomeScreen.css";
 import ProductDesktop from "./ProductDesktop"
+import {Container, Row, Col} from 'react-bootstrap'
 
 const HomeScreen = () => {
 
   return (
-    <div className="container-fluic pl-0 pr-0">
-      <div className="row rowSize">
-        <div className="col-sm-1"></div>
-        <div className="col-sm-3 homescreen__products">
+    <Container fluid>
+      <Row>
+        <Col sm={1}></Col>
+        <Col lg={3} className="homescreen__products">
           <ProductDesktop/>
-        </div>
-        <div className="col-sm-3 homescreen__products">
+        </Col>
+        <Col lg={3} className="homescreen__products">
           <ProductDesktop/>
-        </div>
-        <div className="col-sm-3 homescreen__products">
+        </Col>
+        <Col lg={3} className="homescreen__products">
           <ProductDesktop/>
-        </div>
-        <div className="col-sm-1"></div>
-      </div>
-    </div>
+        </Col>
+        <Col sm={1}></Col>
+      </Row>
+    </Container>
   );
 };
 

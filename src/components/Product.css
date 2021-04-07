@@ -3,6 +3,25 @@
     box-shadow: 0px 0px 4px rgba(69, 69, 69, 0.5);
 }
 
+.pictureOverlayHeader{
+    display: none;
+}
+
+.pictureOverlayColourText{
+    display: none;
+}
+
+.pictureOverlayProductID{
+    display:none;
+}
+
+.colorDot{
+    display:none;
+}
+
+.colorDiv{
+    display: none;
+}
 
 @media only screen and (max-width: 3840px)
 {
@@ -10,6 +29,66 @@
         height: 348px;
         width: 100%;
         margin-left: 0%;
+    }
+
+    .ProductContainer:hover .TextStyle {
+        opacity: 0.1;
+    }
+
+    .ProductContainer:hover .PictureStyle{
+        opacity: 0.3;
+    }
+
+    .ProductContainer:hover .pictureOverlayHeader{
+        display: block;
+        position: absolute;
+        margin-top: -52%;
+        font-size: x-large;
+        word-break: keep-all;
+        text-align: center;
+        margin-left: 38%;
+    }
+    
+    .ProductContainer:hover .pictureOverlayColourText{
+        display: block;
+        position: absolute;
+        margin-top: -35%;
+        font-size: large;
+        word-break: keep-all;
+        text-align: left;
+        margin-left: 35%;
+        font-weight: 500;
+    }
+
+    .ProductContainer:hover .pictureOverlayProductID{
+        display: block;
+        position: absolute;
+        margin-top: -10%;
+        font-size: large;
+        word-break: keep-all;
+        text-align: left;
+        margin-left: 33%;
+        font-weight: 500;
+    }
+    
+    .ProductContainer:hover .colorDiv{
+        display: block;
+        position: absolute;
+        margin-top: -30%;
+        margin-left: 31%;
+        width:30%;
+        text-align: center;
+    }
+
+    .ProductContainer:hover .colorDot{
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-left: 1%;
+        border-style: solid;
+        border-color: white;
+        border-width: 2px;
     }
 }
 
@@ -20,6 +99,67 @@
         max-width: 100%;
         margin-left: 0%;
     }
+
+    .ProductContainer:hover .TextStyle {
+        opacity: 0.3;
+    }
+
+    .ProductContainer:hover .PictureStyle{
+        opacity: 0.3;
+    }
+
+    .ProductContainer:hover .pictureOverlayHeader{
+        display: block;
+        position: absolute;
+        margin-top: -70%;
+        font-size: x-large;
+        word-break: keep-all;
+        text-align: center;
+        margin-left: 33%;
+    }
+    
+    .ProductContainer:hover .pictureOverlayColourText{
+        display: block;
+        position: absolute;
+        margin-top: -45%;
+        font-size: large;
+        word-break: keep-all;
+        text-align: left;
+        margin-left: 30%;
+        font-weight: 500;
+    }
+
+    .ProductContainer:hover .pictureOverlayProductID{
+        display: block;
+        position: absolute;
+        margin-top: -10%;
+        font-size: large;
+        word-break: keep-all;
+        text-align: left;
+        margin-left: 28%;
+        font-weight: 500;
+    }
+
+    .ProductContainer:hover .colorDiv{
+        display: block;
+        position: absolute;
+        margin-top: -38%;
+        margin-left: 29%;
+        width: 30%;
+        text-align: center;
+    }
+
+    .ProductContainer:hover .colorDot{
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-right: 3%;
+        border-color: white;
+        border-width: 2px;
+        border-style: solid;
+    }
+
 }
 
 @media only screen and (max-width: 1366px)
@@ -30,9 +170,10 @@
         margin-left: 0%;
     }
 }
+
 .TextStyle{
     color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #454545;
+    background-color: #4545459F;
     background-blend-mode: lighten;
 }

@@ -1,16 +1,54 @@
 import React from 'react'
 import './Product.css'
-import bag1 from "../images/bag1.jpg"
 
-function ProductDesktop() {
-    return (
-        <div className="container-fluid ProductContainer">
-            <img src={bag1} className="PictureStyle" alt="bag1"/>
-            <span className="carousel-caption TextStyle">
-                MyGreatText
-            </span>
-        </div>
-    )
+
+const colors = ["7C3E29", "874E3B", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"];
+
+class ProductDesktop extends React.Component {
+
+    
+    constructor(props)
+    {
+        super(props);
+
+        this.state = {
+            productID : this.props.ProductId,
+            productTotalColors: colors.length, // to be acquired from database
+            productColorHexArray: colors,
+            dots: [],
+        }
+        this.initiateColorsForProduct = this.initiateColorsForProduct.bind(this);
+        this.initiateColorsForProduct();
+    }
+
+    initiateColorsForProduct()
+    {
+        for(let i = 0; i < this.state.productTotalColors; ++i)
+        {
+            this.state.dots.push(<span className="colorDot" id={this.state.productID + "Color" + i} style = {{background: "#" + this.state.productColorHexArray[i]}}></span>)
+        }
+    }
+
+    render()
+    {
+        return (
+            <div className="container-fluid ProductContainer" >
+                <img src={this.props.picsrc} className="PictureStyle" alt="bag1"/>
+                <h3 className="pictureOverlayHeader">ProductX</h3>
+                <span className="pictureOverlayColourText">Available Colours</span>
+                <div className="colorDiv">
+                    {this.state.dots}
+                </div>
+                <span className="pictureOverlayProductID">Product Code: XXX</span>
+                <span className="carousel-caption TextStyle">
+                    MyGreatText
+                </span>
+    
+            </div>
+        )
+    }
+    
 }
+
 
 export default ProductDesktop

@@ -4,11 +4,9 @@ import bag1 from "../images/bag1.jpg"
 import bag2 from "../images/bag2.jpg"
 import bag3 from "../images/bag3.jpg"
 import {Carousel, Container, Row, Col} from 'react-bootstrap'
-import useWindowDimensions from './windowDimensions'
 
 const ItemCarousel = () =>
 {
-    const {height, width} = useWindowDimensions();
 
         return(
             <Container fluid className="pt-5 d-none d-lg-block"> 

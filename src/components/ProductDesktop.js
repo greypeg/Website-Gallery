@@ -1,9 +1,6 @@
 import React from 'react'
 import './Product.css'
 
-
-const colors = ["7C3E29", "874E3B", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"];
-
 class ProductDesktop extends React.Component {
 
     

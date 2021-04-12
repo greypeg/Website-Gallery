@@ -6,6 +6,8 @@ import NavbarMini from './components/NavbarMini'
 import HomeScreen from "./components/HomeScreen";
 import ItemCarousel from "./components/itemCarousel";
 import SortFilter from "./components/Sort_Filters";
+import ProductPage from "./components/ProductPage";
+import ProductPageCarousel from "./components/ProductPageCarousel";
 
 const CategoriesEnum = {
   Handbugs    : 0,
@@ -22,6 +24,13 @@ const Sorting = {
   OldestToNewset  : 3
 };
 
+const Pages = {
+  Home : 0,
+  Product: 1,
+  About : 2,
+};
+
+
 class App extends React.Component {
   //when app loads up 
   constructor(props)
@@ -30,12 +39,32 @@ class App extends React.Component {
     this.state = {
       SelectedCategory: CategoriesEnum.All,
       SelectedSorting: Sorting.AlphIncremental,
-      NumberOfDisplayedItems: 3
+      NumberOfDisplayedItems: 6,
+      DisplayedPage: Pages.Product,
+      windowWidth: window.innerWidth,
+      previousPage: Pages.Product,
+      MainContent: []
     };
 
     this.changeSelectedCategory = this.changeSelectedCategory.bind(this);
     this.changeSelectedSorting = this.changeSelectedSorting.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+    this.changeDisplayedPage = this.changeDisplayedPage.bind(this);
+
+    this.changeDisplayedPage(Pages.Product, true);
   }
+
+  handleResize() {
+    this.setState({ windowWidth: window.innerWidth });
+   };
+  
+   componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+   }
+  
+   componentWillUnmount() {
+    window.addEventListener("resize", this.handleResize);
+   } 
 
   changeSelectedCategory(newCategory)
   {
@@ -55,19 +84,48 @@ class App extends React.Component {
 
   }
 
+  changeDisplayedPage(newPage, init=false)
+  {
+    
+    if((newPage>=0 && newPage < 3 && this.state.DisplayedPage !== newPage) || init)
+    {
+      const categoryDisplayed = this.state.SelectedCategory;
+      const sortingSelected = this.state.SelectedSorting;
+      const displayedItems  = this.state.NumberOfDisplayedItems;
+      
+      this.setState({
+        previousPage: this.state.DisplayedPage,
+        DisplayedPage: newPage
+      });
+
+      switch(newPage)
+      {
+        case Pages.Home:
+          this.state.MainContent = [];
+          this.state.MainContent.push(<ItemCarousel key="HomeCarousel"/>);
+          this.state.MainContent.push(<SortFilter key="SortFilters" changeSelectedCategory={this.changeSelectedCategory} changeSelectedSorting={this.changeSelectedSorting}/>);
+          this.state.MainContent.push(<HomeScreen key="HomeScreen" windowWidth={this.state.windowWidth} displayedItems={displayedItems} categorySelected={categoryDisplayed} sortingSelected = {sortingSelected}/>);
+          break;
+        case Pages.Product:
+          this.state.MainContent = [];
+          this.state.MainContent.push(<ProductPage/>);
+          break;
+        case Pages.About:
+          break;
+        default:
+          break;
+      }
+    }
+
+  }
+
   render()
   {
-    const categoryDisplayed = this.state.SelectedCategory;
-    const sortingSelected = this.state.SelectedSorting;
-    const displayedItems  = this.state.NumberOfDisplayedItems;
-
     return(
       <>
           <NavbarMini/>
           <Navbar/>
-          <ItemCarousel/>
-          <SortFilter changeSelectedCategory={this.changeSelectedCategory} changeSelectedSorting={this.changeSelectedSorting}/>
-          <HomeScreen displayedItems={displayedItems} categorySelected={categoryDisplayed} sortingSelected = {sortingSelected}/>
+          {this.state.MainContent}
       </>
       );
   }

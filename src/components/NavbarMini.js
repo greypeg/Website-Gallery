@@ -30,7 +30,7 @@ function NavbarMini() {
                 </div>
                 <div className="col-sm-1"></div>
                 <div className="col-sm-1 alignmentFix">
-                    <p>Γλώσσα</p>
+                    <p style={{display: 'flex', justifyContent: 'flex-end'}}>Γλώσσα</p>
                 </div>
                 <div className="col-sm-1"></div>
             </div>

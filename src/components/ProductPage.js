@@ -20,7 +20,8 @@ const ProductInfoDemo =
                                 Nulla accumsan diam eget consectetur auctor.",
 
         ProductCode: "001",
-        ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+        ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+        ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
         imgsrc: bagsrc1,
         carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
         carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
@@ -33,22 +34,29 @@ class ProductPage extends React.Component{
     constructor(props)
     {
         super(props);
-
+ 
     }
 
     render()
     {
         return(
-            <Row>
-                <Col sm={1}></Col>
-                <Col md={5}>
-                    <ProductPageCarousel ProductImageSources={ProductInfoDemo.carouselimageSources} ProductImageAlts={ProductInfoDemo.carouselimageAlts}/>
-                </Col>
-                <Col md={5}>
-                    <ProductInfo ProductTitle={ProductInfoDemo.ProductName} ProductDescription={ProductInfoDemo.ProductDescription} ProductCode={ProductInfoDemo.ProductCode} ProductColors={ProductInfoDemo.ProductColors}/>
-                </Col>
-                <Col sm={1}></Col>
-            </Row>
+            <Container fluid>
+                <Row>
+                    <Col sm={1}></Col>
+                    <Col sm={10}>
+                        <Row>
+                        <Col xl={6} sm={12} className="pr-0">
+                            <ProductPageCarousel ProductImageSources={ProductInfoDemo.carouselimageSources} ProductImageAlts={ProductInfoDemo.carouselimageAlts}/>
+                        </Col>
+                        <Col xl={6} sm={12}>
+                            <ProductInfo ProductInfo={ProductInfoDemo}/>
+                        </Col>
+                        </Row>
+                    </Col>
+                    <Col sm={1}></Col>
+                </Row>
+            </Container>
+            
             )
     }
 }

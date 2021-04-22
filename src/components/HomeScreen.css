@@ -16,39 +16,39 @@
     .rowSize
     {
       width:100%;
-      max-width: 2560px;
     }
 
     .homescreen__products {
       margin-top: 1%;
-      margin-left: .75%;
     }
   }
 
   @media only screen and (max-width: 1920px)
   {
     .rowSize{
-      width: 100%;
-      max-width: 1920px;
+      width: auto;
     }
 
     .homescreen__products {
       margin-top: 1.5%;
-      margin-left: 1%;
     }
   }
 
   @media only screen and (max-width: 1366px)
   {
     .rowSize{
-      width: 100%;
-      max-width: 1366px;
+      margin-left: 1%;
+      width: auto;
     }
 
     .homescreen__products {
+      display:flex;
+      justify-content: center;
       margin-top: 1%;
-      margin-left: 1.75%;
     }
+
   }
+
+
 
 

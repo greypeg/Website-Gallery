@@ -15,11 +15,11 @@ class ProductInfo extends React.Component{
 
     constructor(props)
     {
-        super(props);
+        super(props); 
 
         this.state = {
-            productID: this.props.ProductCode,
-            productTotalColors: this.props.ProductColors.length,
+            productID: this.props.ProductInfo.ProductCode,
+            productTotalColors: this.props.ProductInfo.ProductColors.length,
             colorDots: [],
         }
 
@@ -31,10 +31,17 @@ class ProductInfo extends React.Component{
     {
         for(let i = 0; i < this.state.productTotalColors; ++i)
         {
-            this.state.colorDots.push(<span className="colors" id={this.state.productID + "Color" + i} key = {this.props.productID + "Color" + i} 
-                style = {{background: "#" + this.props.ProductColors[i], 
+            this.state.colorDots.push(
+            <span 
+                className="colors" 
+                id={this.state.productID + "Color" + i} 
+                key = {this.props.productID + "Color" + i} 
+                style = {{background: "#" + this.props.ProductInfo.ProductColors[i], 
                             backgroundOrigin: "content-box", 
-                            backgroundClip: "content-box"}}></span>)
+                            backgroundClip: "content-box"}}
+                alt = {this.props.ProductInfo.ProductColorCodes[i]}
+                title = {"Color code: " + this.props.ProductInfo.ProductColorCodes[i]}
+                ></span>)
         }
     }
 
@@ -45,14 +52,14 @@ class ProductInfo extends React.Component{
         return(
             <div className="positioning">
                 <Row>
-                    <span className="Title">{this.props.ProductTitle}</span>
+                    <span className="Title">{this.props.ProductInfo.ProductName}</span>
                 </Row>
                 <Row>
-                    <span className="Description">{this.props.ProductDescription}</span>
+                    <span className="Description">{this.props.ProductInfo.ProductDescription}</span>
                 </Row>
                 <Row>
                     <Col lg={3}></Col>
-                    <Col lg={6}>
+                    <Col lg={6} className="ColorInfo">
                         <span className="ColorText">Available Colors</span>
                         <div className="ColorDiv">
                             {this.state.colorDots}
@@ -61,7 +68,7 @@ class ProductInfo extends React.Component{
                     <Col lg={3}></Col>
                 </Row>
                 <Row>
-                    <span className="Code">Product Code: {this.props.ProductCode}</span>
+                    <span className="Code">Product Code: {this.props.ProductInfo.ProductCode}</span>
                 </Row>
             </div>
         )

@@ -8,8 +8,13 @@
     color:white;
 }
 
-
+.ham{
+    display: none;
+}
 @media only screen and (max-width: 3840px){
+    .Navbar .leftSide .ham{
+        display: none;
+    }
     .links a{
         text-decoration: underline;
         text-decoration-style: solid;
@@ -19,6 +24,9 @@
         text-decoration-skip-ink: none;
     }
 
+    button{
+        display:none;
+    }
     .logo{
         height:73px;
     }
@@ -27,16 +35,11 @@
         padding-top: .5%;
         padding-bottom: .5%;
     }
-    .centerSide .iconify{
-        margin-left: -8%;
-        height: auto;
-    }
     .centerSide input{
         height: 50px;
         width: 80%;
         border: none;
         border-radius: 10px;
-        
         background-color: white;
     }
     
@@ -44,52 +47,55 @@
         text-decoration: none;
     }
 }
+@media only screen and (max-width: 1730px){
+    .links a{
+      font-size: 30px;
+    }}
 
+@media only screen and (max-width: 1330px)
+{
+    .links a{
+     font-size:30px;
+    }
+}
 @media only screen and (max-width: 1200px)
 {
     .links a{
-        text-decoration: underline;
-        text-decoration-style: solid;
-        font-family: 'Redressed';
-        font-size: 25px;
-        color: white;
-        text-decoration-skip-ink: none;
+     font-size:25px;
     }
-
-    .logo{
-        height: 60px;
+}
+@media only screen and (max-width: 1000px)
+{
+    .links a{
+     font-size:25px;
     }
-
-    .centerSide, .rightSide{
-        padding-top: .75%;
-        padding-bottom: .5%;
+}
+@media only screen and (max-width: 761px){
+    .links a{
+        font-size:25px;
     }
-    
-    .rightSide{
-        margin-left: 1%
+}
+@media only screen and (max-width: 650px)
+{
+    .Navbar .leftSide .ham{
+        display: initial;
     }
-
-    .centerSide .iconify{
-        margin-left: -10%;
-        height: auto;
+    .links a{
+    display: none;
+    }
+    .logocontainer{
+        display: none;
+    }
+    .centerSide{
+        justify-content: center;
     }
     .centerSide input{
-        height: 40px;
+        margin-top: 5px;
         width: 100%;
-        border: none;
-        border-radius: 10px;
-        
-        background-color: white;
-    }
-   
-    .links a:hover{
-        text-decoration: none;
+        height: 40px;
     }
 }
 
-.Navbar .rightSide{
-    color:black;
-}
 
 
 /* background: url('https://api.iconify.design/bx:bx-search.svg') no-repeat right center / contain; */

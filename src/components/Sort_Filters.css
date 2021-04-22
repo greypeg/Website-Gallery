@@ -2,3 +2,30 @@
     top: -10px !important;
     right: -160% !important;
 }
+
+.sortingPositioning{
+    display:flex;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 1024px) {
+    span{
+        font-size: 13px;
+    }
+
+    .dropdownButton{
+        font-size: 11px;
+        width: 20% !important;
+    }
+
+    .dropitem{
+        font-size: 11px;
+    }
+
+    .filterSortRow{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+}

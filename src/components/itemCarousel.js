@@ -9,7 +9,7 @@ const ItemCarousel = () =>
 {
 
         return(
-            <Container fluid className="pt-5 d-none d-lg-block"> 
+            <Container fluid className="pt-5 d-none d-md-block"> 
                 <Row>
                     <Col lg={1}></Col>
                     <Col lg={10}>

@@ -7,7 +7,7 @@ import HomeScreen from "./components/HomeScreen";
 import ItemCarousel from "./components/itemCarousel";
 import SortFilter from "./components/Sort_Filters";
 import ProductPage from "./components/ProductPage";
-import ProductPageCarousel from "./components/ProductPageCarousel";
+import ProductMobile from "./components/ProductMobile";
 
 const CategoriesEnum = {
   Handbugs    : 0,
@@ -28,11 +28,18 @@ const Pages = {
   Home : 0,
   Product: 1,
   About : 2,
+  test: 3,
 };
 
 
 class App extends React.Component {
   //when app loads up 
+
+  // TODO:
+  //  Breadcrumbs
+  //  StateList
+  //  Button's that actually work
+  //  Create Database.
   constructor(props)
   {
     super(props);
@@ -51,7 +58,7 @@ class App extends React.Component {
     this.handleResize = this.handleResize.bind(this);
     this.changeDisplayedPage = this.changeDisplayedPage.bind(this);
 
-    this.changeDisplayedPage(Pages.Product, true);
+    this.changeDisplayedPage(Pages.Home, true);
   }
 
   handleResize() {
@@ -113,6 +120,8 @@ class App extends React.Component {
         case Pages.About:
           break;
         default:
+          this.state.MainContent = [];
+          this.state.MainContent.push(<ProductMobile/>)
           break;
       }
     }

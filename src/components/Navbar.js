@@ -1,39 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Navbar.css'
 import logoe from '../images/logoe.png';
 import {Container, Row, Col} from 'react-bootstrap'
-
+import Hamburger from 'hamburger-react'
 
 function Navbar() {
-
-
+    const [isOpen, setOpen] = useState(false)
     return (
         <Container fluid className="Navbar">
             <Row>
                 <Col lg={1}></Col>
-                <Col lg={2} className="leftSide">
-                    <a href="/">
-                        <img src={logoe} alt="Logo" className="logo"/>
-                    </a>
+                <Col lg={2}  md={3} sm={3} xs={2} className="leftSide">
+                    <div className=".d-none .d-xl-block">  <a href="/">
+                        <div className="logocontainer">
+                        <img src={logoe} alt="Logo" className="logo"/></div>
+                    </a></div>
+                    <div className="ham"><Hamburger className="ham" toggled={isOpen} toggle={setOpen} /></div>
                 </Col>
-                <Col lg={4} className="centerSide">
+                <Col lg={3} md={3} sm={3} xs={10}className="centerSide">
                     <input type="search" placeholder="  Search..."></input>
                     <span className="iconify" data-icon="bx:bx-search" data-inline="false"></span>
                 </Col>
-                <Col lg={4} className="rightSide links">
-                    <Row>
-                        <Col lg={true} className="align-self-end">
+                <Col lg={6} md={6} sm={6} xs="auto" className="rightSide links" id={isOpen ? "hidden" : ""}>
+                    <Row id={isOpen ? "wrapper" : ""}>
+                        <Col lg={true} md={true} sm={true} xs={true} className="">
                             <a href="/home">Home</a>
                         </Col>
-                        <Col lg={true} className="align-self-end">
-                            <a href="/aboutus" style={{marginLeft: '-12%'}}>About us</a>
+                        <Col lg={true} md={true} sm={true} xs={true} className="">
+                            <a href="/aboutus">About</a>
                         </Col>
-                        <Col lg={true} className="align-self-end">
+                        <Col lg={true} md={true} sm={true} xs={true} className="">
                             <a href="/contact">Contact</a>
                         </Col>
                     </Row>
                 </Col>
-                <Col lg={1}></Col>
             </Row>
         </Container>
     )

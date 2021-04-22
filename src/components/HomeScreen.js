@@ -1,5 +1,6 @@
 import "./HomeScreen.css";
 import ProductDesktop from "./ProductDesktop"
+import ProductMobile from "./ProductMobile"
 import {Container, Row, Col} from 'react-bootstrap'
 import React from "react";
 import bagsrc1 from "../images/bag1.jpg"
@@ -8,45 +9,45 @@ import bagsrc3 from "../images/bag3.jpg"
  
 const Products = [
   {
-    Imgsrc: bagsrc1,
+    imgsrc: bagsrc1,
     ProductCode: "001",
-    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
-    ProductDescription: "Patata3000",
+    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736", "7C3E29", "874E3B", "5C4736", "322423", "7C3E29", "874E3B", "5C4736", "322423"],
+    ProductShortDescription: "Patata3000",
     ProductName: "Product tsixla",
   },
   {
-    Imgsrc: bagsrc2,
+    imgsrc: bagsrc2,
     ProductCode: "002",
     ProductColors: ["7C3E29", "322423", "322423", "5C4736", "5C4736"],
-    ProductDescription: "Patata3001",
+    ProductShortDescription: "Patata3001",
     ProductName: "Product goomba",
   },
   {
-    Imgsrc: bagsrc3,
+    imgsrc: bagsrc3,
     ProductCode: "003",
     ProductColors: ["7C3E29", "322423", "5C4736", "5C4736"],
-    ProductDescription: "Patata3002",
+    ProductShortDescription: "Patata3002",
     ProductName: "Product Mario",
   },
   {
-    Imgsrc: bagsrc1,
+    imgsrc: bagsrc1,
     ProductCode: "004",
     ProductColors: ["7C3E29", "322423", "7C3E29", "874E3B", "322423", "5C4736", "5C4736"],
-    ProductDescription: "Patata3003",
+    ProductShortDescription: "Patata3003",
     ProductName: "Product schle",
   },
   {
-    Imgsrc: bagsrc2,
+    imgsrc: bagsrc2,
     ProductCode: "005",
     ProductColors: ["322423", "7C3E29", "874E3B", "322423", "5C4736", "5C4736"],
-    ProductDescription: "Patata3004",
+    ProductShortDescription: "Patata3004",
     ProductName: "Product phle",
   },
   {
-    Imgsrc: bagsrc3,
+    imgsrc: bagsrc3,
     ProductCode: "006",
     ProductColors: ["7C3E29", "322423", "7C3E29", "874E3B", "5C4736"],
-    ProductDescription: "Patata3005",
+    ProductShortDescription: "Patata3005",
     ProductName: "Product kati einai kai auto",
   },
 ];
@@ -90,6 +91,7 @@ class HomeScreen extends React.Component{
   // We will query the server with a specified category, sorting and we will display a number of items equal to totalProducts. Response will be into Products var.
   initProducts()
   {
+
     var totalProducts = this.state.NumberOfDisplayedItems;
     // let sorting = this.state.SelectedSorting;
     // let category = this.state.categorySelected;
@@ -100,20 +102,17 @@ class HomeScreen extends React.Component{
 
     var ProductsPerRow;
 
-    if(this.props.windowWidth > 992)
+    if(this.props.windowWidth > 1200)
     {
+
       ProductsPerRow = 3;
       for(let i = 0; i < totalProducts; ++i)
       {
         Cols.push(
-            <Col md={3} key={"Product" + i + "Col"} className = "homescreen__products">
+            <Col md={4} key={"Product" + i + "Col"} className = "homescreen__products">
               <ProductDesktop 
-              ProductID={"Product" + i} 
-              picsrc={Products[i].Imgsrc}
-              ProductName={Products[i].ProductName} 
-              ProductCode={Products[i].ProductCode}
-              ProductColors={Products[i].ProductColors}
-              ProductDesc={Products[i].ProductDescription}
+                ProductID={"Product" + Products[i].ProductCode}
+                ProductInfo={Products[i]}
               ></ProductDesktop>
             </Col>
         );
@@ -125,10 +124,123 @@ class HomeScreen extends React.Component{
         {
           this.state.Products.push(
             <Row key={"Product" + i + "-" + i+2 + "Row"} className="rowSize">
+              <Col lg={1}></Col>
+              <Col lg={10}>
+                <Row>
+                  {Cols[i++]}
+                  {Cols[i++]}
+                  {Cols[i++]}
+                </Row>
+              </Col>
+              <Col lg={1}></Col>
+            </Row>
+          )
+        }
+        else if(i + (ProductsPerRow-1) < totalProducts)
+        {
+          this.state.Products.push(
+            <Row key={"Product" + i + "-" + i+1 + "Row"} className="rowSize">
+              <Col lg={1}></Col>
+              <Col lg={10}>
+                <Row>
+                  {Cols[i++]}
+                  {Cols[i++]}
+                </Row>
+              </Col>
+              <Col lg={1}></Col>
+            </Row>
+          )
+        }
+        else
+        {
+          this.state.Products.push(
+            <Row key={"Product" + i + "-" + i + "Row"} className="rowSize">
+              <Col lg={1}></Col>
+              <Col lg={10}>
+                <Row>
+                  {Cols[i++]}
+                </Row>
+              </Col>
+              <Col lg={1}></Col>
+            </Row>
+          )
+        }
+      }
+    }
+    else if (this.props.windowWidth < 768)
+    {
+      ProductsPerRow = 2;
+      for(let i = 0; i < totalProducts; ++i)
+      {
+        Cols.push(
+            <Col xs={6} key={"Product" + i + "Col"} className = "homescreen__products">
+              <ProductMobile 
+                ProductID={"Product" + Products[i].ProductCode}
+                ProductInfo={Products[i]}
+              ></ProductMobile>
+            </Col>
+        );
+      }
+
+      for (let i = 0; i < totalProducts;)
+      {
+        if(i + ProductsPerRow <= totalProducts)
+        {
+          this.state.Products.push(
+            <Row key={"Product" + i + "-" + i+2 + "Row"} className="rowSize">
+              <Col xs={12}>
+                <Row>
+                  {Cols[i++]}
+                  {Cols[i++]}
+                </Row>
+              </Col>
+            </Row>
+          )
+        }
+        else if(i + (ProductsPerRow-1) < totalProducts)
+        {
+          this.state.Products.push(
+            <Row key={"Product" + i + "-" + i+1 + "Row"} className="rowSize">
+              <Col xs={12}>
+                <Row>
+                  {Cols[i++]}
+                </Row>
+              </Col>
+            </Row>
+          )
+        }
+      }
+    }
+    else if (this.props.windowWidth >= 768 && this.props.windowWidth <= 1200)
+    {
+      ProductsPerRow = 3;
+      for(let i = 0; i < totalProducts; ++i)
+      {
+        Cols.push(
+            <Col xs={4} key={"Product" + i + "Col"} className = "homescreen__products">
+              <ProductMobile 
+                ProductID={"Product" + Products[i].ProductCode}
+                ProductInfo={Products[i]}
+                windowWidth={this.props.windowWidth}
+              ></ProductMobile>
+            </Col>
+        );
+      }
+
+      for (let i = 0; i < totalProducts;)
+      {
+        if(i + ProductsPerRow <= totalProducts)
+        {
+          this.state.Products.push(
+            <Row key={"Product" + i + "-" + i+2 + "Row"} className="rowSize">
               <Col sm={1}></Col>
-              {Cols[i++]}
-              {Cols[i++]}
-              {Cols[i++]}
+              <Col sm={10}>
+                <Row>
+                  {Cols[i++]}
+                  {Cols[i++]}
+                  {Cols[i++]}
+                </Row>
+              </Col>
               <Col sm={1}></Col>
             </Row>
           )
@@ -137,35 +249,35 @@ class HomeScreen extends React.Component{
         {
           this.state.Products.push(
             <Row key={"Product" + i + "-" + i+1 + "Row"} className="rowSize">
-              <Col sm={1}></Col>
-              {Cols[i++]}
-              {Cols[i++]}
-              <Col sm={1}></Col>
+              <Col xs={12}>
+                <Row>
+                  {Cols[i++]}
+                  {Cols[i++]}
+                </Row>
+              </Col>
             </Row>
           )
         }
-        else
+        else if(i + (ProductsPerRow-2) < totalProducts)
         {
           this.state.Products.push(
-            <Row key={"Product" + i + "-" + i + "Row"} className="rowSize">
-              <Col sm={1}></Col>
-              {Cols[i++]}
-              <Col sm={1}></Col>
+            <Row key={"Product" + i + "-" + i+1 + "Row"} className="rowSize">
+              <Col xs={12}>
+                <Row>
+                  {Cols[i++]}
+                </Row>
+              </Col>
             </Row>
           )
         }
       }
     }
-    else
-    {
-      // mikre grigori this is your job (sm and xs screens :) )
-    }
-
   }
+
+  
 
   render() {
     this.UpdateInfo();
-
     return (
       <Container fluid>
         {this.state.Products}

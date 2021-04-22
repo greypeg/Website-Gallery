@@ -28,31 +28,31 @@ class ProductPageCarousel extends React.Component{
         return (
             <div>
                 <Carousel 
-                    autoPlay 
+                    autoPlay  
                     interval="5000" transitionTime="1000" 
                     className="product-carousel">
                     <div>
-                        <img src="https://picsum.photos/700/400?img=1" />
+                        <img src="https://picsum.photos/700/400?img=1" className="carouselImage"/>
                         <p className="legend">My Classic Still {++i}</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/700/400?img=2" />
+                        <img src="https://picsum.photos/700/400?img=2" className="carouselImage"/>
                         <p className="legend">My Classic Still {++i}</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/700/400?img=3" />
+                        <img src="https://picsum.photos/700/400?img=3" className="carouselImage"/>
                         <p className="legend">My Classic Still {++i}</p>
                     </div>
                     <div>
-                        <img src={bagsrc1} />
+                        <img src={bagsrc1} className="carouselImage"/>
                         <p className="legend">My Classic Still {++i}</p>
                     </div>
                     <div>
-                        <img src={bagsrc2} />
+                        <img src={bagsrc2} className="carouselImage"/>
                         <p className="legend">My Classic Still {++i}</p>
                     </div>
                     <div>
-                        <img src={bagsrc3} />
+                        <img src={bagsrc3} className="carouselImage"/>
                         <p className="legend">My Classic Still {++i}</p>
                     </div>
 

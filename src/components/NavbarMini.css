@@ -3,19 +3,27 @@ body{
     margin: 0;
 }
 
+#hidden2{
+    display: none;
+}
 .NavbarMini{
     background-color:#C4C4C4;
     color: #FFFFFF;
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    max-height: 25px;
+    max-height: 35px;
+}
+#hid{
+    text-align: center;
 }
 
-.iconify { width: 25px; height: 20px; }
 
-
-@media (min-width: 1922px) and (max-width: 2560px)
+@media only screen and (max-width: 550px)
 {
-    .alignmentFix{
-        margin-left: -0.8%;
-    }
+ #hid{
+     display: none;
+ }
+ #hidden2{
+     display: flex;
+ }
 }
+

@@ -94,7 +94,7 @@ class ProductMobile extends React.Component{
     render()
     {
         return(
-            <div fluid-fixed id={this.props.ProductID} className="mobileProductContainer">
+            <div fluid-fixed="true" id={this.props.ProductID} className="mobileProductContainer">
                 <Row className = "imageRow">
                     <Col xs={12}>
                         <img src={this.props.ProductInfo.imgsrc} alt={this.props.ProductInfo.ProductName}></img>

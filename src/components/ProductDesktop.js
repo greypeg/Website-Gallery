@@ -7,7 +7,6 @@ class ProductDesktop extends React.Component {
     constructor(props)
     {
         super(props);
-        console.log(props);
         this.state = {
             productTotalColors: props.ProductInfo.ProductColors.length, 
             dots: [],

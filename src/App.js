@@ -7,7 +7,7 @@ import HomeScreen from "./components/HomeScreen";
 import ItemCarousel from "./components/itemCarousel";
 import SortFilter from "./components/Sort_Filters";
 import ProductPage from "./components/ProductPage";
-import ProductMobile from "./components/ProductMobile";
+
 
 const CategoriesEnum = {
   Handbugs    : 0,
@@ -31,7 +31,6 @@ const Pages = {
   test: 3,
 };
 
-
 class App extends React.Component {
   //when app loads up 
 
@@ -47,18 +46,48 @@ class App extends React.Component {
       SelectedCategory: CategoriesEnum.All,
       SelectedSorting: Sorting.AlphIncremental,
       NumberOfDisplayedItems: 6,
-      DisplayedPage: Pages.Product,
+      DisplayedPage: Pages.Home,
       windowWidth: window.innerWidth,
-      previousPage: Pages.Product,
-      MainContent: []
+      previousPage: Pages.Home,
+      MainContent: [],
+      ProductPageInfo: undefined
     };
 
     this.changeSelectedCategory = this.changeSelectedCategory.bind(this);
     this.changeSelectedSorting = this.changeSelectedSorting.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.changeDisplayedPage = this.changeDisplayedPage.bind(this);
+    this.handleOpenProductPage = this.handleOpenProductPage.bind(this);
+    this.handleNavButtonClick = this.handleNavButtonClick.bind(this);
 
     this.changeDisplayedPage(Pages.Home, true);
+  }
+
+  handleOpenProductPage(SelectedProductInfo)
+  {
+    this.setState({ 
+      ProductPageInfo: SelectedProductInfo
+    },() => { this.changeDisplayedPage(Pages.Product) }) ;
+  }
+
+  handleNavButtonClick(NavButtonClicked)
+  {
+    switch(NavButtonClicked)
+    {
+      case Pages.Home:
+        if(this.state.DisplayedPage === Pages.Home) return;
+        
+        this.changeDisplayedPage(Pages.Home);
+        break;
+      case Pages.About:
+        if(this.state.DisplayedPage === Pages.About) return;
+
+        this.changeDisplayedPage(Pages.About);
+        break;
+      default:
+        console.error("How did you even get here? Please report the bug to our devs");
+        break;
+    }
   }
 
   handleResize() {
@@ -93,37 +122,46 @@ class App extends React.Component {
 
   changeDisplayedPage(newPage, init=false)
   {
-    
     if((newPage>=0 && newPage < 3 && this.state.DisplayedPage !== newPage) || init)
     {
       const categoryDisplayed = this.state.SelectedCategory;
       const sortingSelected = this.state.SelectedSorting;
       const displayedItems  = this.state.NumberOfDisplayedItems;
       
+      switch(newPage)
+      {
+        case Pages.Home:
+
+          this.state.MainContent = [
+              <ItemCarousel key="HomeCarousel"/>,
+              <SortFilter key="SortFilters" changeSelectedCategory={this.changeSelectedCategory} changeSelectedSorting={this.changeSelectedSorting}/>,
+              <HomeScreen key="HomeScreen" OpenProductPageHandler={this.handleOpenProductPage} windowWidth={this.state.windowWidth} displayedItems={displayedItems} categorySelected={categoryDisplayed} sortingSelected = {sortingSelected}/>,
+            ];
+          break;
+        case Pages.Product:
+
+          this.state.MainContent = [
+              <ProductPage key="ProductPage" ProductInfoDemo = {this.state.ProductPageInfo}/>,
+            ];
+
+          break;
+        case Pages.About:
+
+          this.state.MainContent = [
+              <span key="AboutUs">About us :)</span>
+            ];
+
+          break;
+        default:
+          console.error("How did you get here? Please contact our devs");
+          break;
+      }
+      
       this.setState({
         previousPage: this.state.DisplayedPage,
         DisplayedPage: newPage
       });
-
-      switch(newPage)
-      {
-        case Pages.Home:
-          this.state.MainContent = [];
-          this.state.MainContent.push(<ItemCarousel key="HomeCarousel"/>);
-          this.state.MainContent.push(<SortFilter key="SortFilters" changeSelectedCategory={this.changeSelectedCategory} changeSelectedSorting={this.changeSelectedSorting}/>);
-          this.state.MainContent.push(<HomeScreen key="HomeScreen" windowWidth={this.state.windowWidth} displayedItems={displayedItems} categorySelected={categoryDisplayed} sortingSelected = {sortingSelected}/>);
-          break;
-        case Pages.Product:
-          this.state.MainContent = [];
-          this.state.MainContent.push(<ProductPage/>);
-          break;
-        case Pages.About:
-          break;
-        default:
-          this.state.MainContent = [];
-          this.state.MainContent.push(<ProductMobile/>)
-          break;
-      }
+      console.log(this.state.MainContent);
     }
 
   }
@@ -133,7 +171,7 @@ class App extends React.Component {
     return(
       <>
           <NavbarMini/>
-          <Navbar/>
+          <Navbar handleNavButtonClick = {this.handleNavButtonClick}/>
           {this.state.MainContent}
       </>
       );

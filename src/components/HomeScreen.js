@@ -7,50 +7,123 @@ import bagsrc1 from "../images/bag1.jpg"
 import bagsrc2 from "../images/bag2.jpg"
 import bagsrc3 from "../images/bag3.jpg"
  
+
 const Products = [
-  {
-    imgsrc: bagsrc1,
-    ProductCode: "001",
-    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736", "7C3E29", "874E3B", "5C4736", "322423", "7C3E29", "874E3B", "5C4736", "322423"],
-    ProductShortDescription: "Patata3000",
-    ProductName: "Product tsixla",
+    {
+        ProductName: "Leather Backpack",
+        ProductDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra ligula erat, \
+                                ut semper mauris mollis vel. Duis fermentum a quam facilisis vulputate. Aenean id velit non ex sagittis posuere et id odio.\
+                                Nulla aliquet, libero nec pulvinar efficitur, orci lectus tempus libero, et varius nunc turpis a metus.\
+                                Mauris ac leo id lacus tempus pulvinar. Praesent diam est, tempus a massa mollis, condimentum commodo justo.\
+                                Curabitur malesuada est vitae arcu bibendum, vel pretium nisl elementum. Sed vehicula justo sagittis erat ultrices scelerisque.\
+                                Fusce ut ante sem. Vivamus vitae mattis libero, vitae rhoncus tellus. Sed id vestibulum erat, sed eleifend est.\
+                                Sed in erat eu odio pharetra ullamcorper commodo finibus justo. Vestibulum interdum semper arcu, sit amet porta massa rutrum eu.\
+                                Nulla accumsan diam eget consectetur auctor.",
+
+        ProductCode: "001",
+        ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+        ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
+        imgsrc: bagsrc1,
+        carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
+        carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
+        ProductShortDescription: "Leather, Back"
+    },
+    {
+      ProductName: "Leather Backpack Blue",
+      ProductDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra ligula erat, \
+                              ut semper mauris mollis vel. Duis fermentum a quam facilisis vulputate. Aenean id velit non ex sagittis posuere et id odio.\
+                              Nulla aliquet, libero nec pulvinar efficitur, orci lectus tempus libero, et varius nunc turpis a metus.\
+                              Mauris ac leo id lacus tempus pulvinar. Praesent diam est, tempus a massa mollis, condimentum commodo justo.\
+                              Curabitur malesuada est vitae arcu bibendum, vel pretium nisl elementum. Sed vehicula justo sagittis erat ultrices scelerisque.\
+                              Fusce ut ante sem. Vivamus vitae mattis libero, vitae rhoncus tellus. Sed id vestibulum erat, sed eleifend est.\
+                              Sed in erat eu odio pharetra ullamcorper commodo finibus justo. Vestibulum interdum semper arcu, sit amet porta massa rutrum eu.\
+                              Nulla accumsan diam eget consectetur auctor.",
+
+      ProductCode: "002",
+      ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+      ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
+      imgsrc: bagsrc2,
+      carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
+      carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
+      ProductShortDescription: "Leather, Back"
   },
   {
-    imgsrc: bagsrc2,
-    ProductCode: "002",
-    ProductColors: ["7C3E29", "322423", "322423", "5C4736", "5C4736"],
-    ProductShortDescription: "Patata3001",
-    ProductName: "Product goomba",
-  },
-  {
-    imgsrc: bagsrc3,
+    ProductName: "Leather Backpack Red",
+    ProductDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra ligula erat, \
+                            ut semper mauris mollis vel. Duis fermentum a quam facilisis vulputate. Aenean id velit non ex sagittis posuere et id odio.\
+                            Nulla aliquet, libero nec pulvinar efficitur, orci lectus tempus libero, et varius nunc turpis a metus.\
+                            Mauris ac leo id lacus tempus pulvinar. Praesent diam est, tempus a massa mollis, condimentum commodo justo.\
+                            Curabitur malesuada est vitae arcu bibendum, vel pretium nisl elementum. Sed vehicula justo sagittis erat ultrices scelerisque.\
+                            Fusce ut ante sem. Vivamus vitae mattis libero, vitae rhoncus tellus. Sed id vestibulum erat, sed eleifend est.\
+                            Sed in erat eu odio pharetra ullamcorper commodo finibus justo. Vestibulum interdum semper arcu, sit amet porta massa rutrum eu.\
+                            Nulla accumsan diam eget consectetur auctor.",
+
     ProductCode: "003",
-    ProductColors: ["7C3E29", "322423", "5C4736", "5C4736"],
-    ProductShortDescription: "Patata3002",
-    ProductName: "Product Mario",
-  },
-  {
-    imgsrc: bagsrc1,
-    ProductCode: "004",
-    ProductColors: ["7C3E29", "322423", "7C3E29", "874E3B", "322423", "5C4736", "5C4736"],
-    ProductShortDescription: "Patata3003",
-    ProductName: "Product schle",
-  },
-  {
-    imgsrc: bagsrc2,
-    ProductCode: "005",
-    ProductColors: ["322423", "7C3E29", "874E3B", "322423", "5C4736", "5C4736"],
-    ProductShortDescription: "Patata3004",
-    ProductName: "Product phle",
-  },
-  {
+    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+    ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
     imgsrc: bagsrc3,
-    ProductCode: "006",
-    ProductColors: ["7C3E29", "322423", "7C3E29", "874E3B", "5C4736"],
-    ProductShortDescription: "Patata3005",
-    ProductName: "Product kati einai kai auto",
+    carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
+    carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
+    ProductShortDescription: "Leather, Back"
   },
-];
+  {
+    ProductName: "Leather Backpack Green-Yellow",
+    ProductDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra ligula erat, \
+                            ut semper mauris mollis vel. Duis fermentum a quam facilisis vulputate. Aenean id velit non ex sagittis posuere et id odio.\
+                            Nulla aliquet, libero nec pulvinar efficitur, orci lectus tempus libero, et varius nunc turpis a metus.\
+                            Mauris ac leo id lacus tempus pulvinar. Praesent diam est, tempus a massa mollis, condimentum commodo justo.\
+                            Curabitur malesuada est vitae arcu bibendum, vel pretium nisl elementum. Sed vehicula justo sagittis erat ultrices scelerisque.\
+                            Fusce ut ante sem. Vivamus vitae mattis libero, vitae rhoncus tellus. Sed id vestibulum erat, sed eleifend est.\
+                            Sed in erat eu odio pharetra ullamcorper commodo finibus justo. Vestibulum interdum semper arcu, sit amet porta massa rutrum eu.\
+                            Nulla accumsan diam eget consectetur auctor.",
+
+    ProductCode: "004",
+    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+    ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
+    imgsrc: bagsrc1,
+    carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
+    carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
+    ProductShortDescription: "Leather, Back"
+  },
+  {
+    ProductName: "Leather Backpack Black Blue And Pink",
+    ProductDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra ligula erat, \
+                            ut semper mauris mollis vel. Duis fermentum a quam facilisis vulputate. Aenean id velit non ex sagittis posuere et id odio.\
+                            Nulla aliquet, libero nec pulvinar efficitur, orci lectus tempus libero, et varius nunc turpis a metus.\
+                            Mauris ac leo id lacus tempus pulvinar. Praesent diam est, tempus a massa mollis, condimentum commodo justo.\
+                            Curabitur malesuada est vitae arcu bibendum, vel pretium nisl elementum. Sed vehicula justo sagittis erat ultrices scelerisque.\
+                            Fusce ut ante sem. Vivamus vitae mattis libero, vitae rhoncus tellus. Sed id vestibulum erat, sed eleifend est.\
+                            Sed in erat eu odio pharetra ullamcorper commodo finibus justo. Vestibulum interdum semper arcu, sit amet porta massa rutrum eu.\
+                            Nulla accumsan diam eget consectetur auctor.",
+
+    ProductCode: "005",
+    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+    ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
+    imgsrc: bagsrc2,
+    carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
+    carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
+    ProductShortDescription: "Leather, Back"
+  },
+  {
+    ProductName: "Leather Backpack whatever...",
+    ProductDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra ligula erat, \
+                            ut semper mauris mollis vel. Duis fermentum a quam facilisis vulputate. Aenean id velit non ex sagittis posuere et id odio.\
+                            Nulla aliquet, libero nec pulvinar efficitur, orci lectus tempus libero, et varius nunc turpis a metus.\
+                            Mauris ac leo id lacus tempus pulvinar. Praesent diam est, tempus a massa mollis, condimentum commodo justo.\
+                            Curabitur malesuada est vitae arcu bibendum, vel pretium nisl elementum. Sed vehicula justo sagittis erat ultrices scelerisque.\
+                            Fusce ut ante sem. Vivamus vitae mattis libero, vitae rhoncus tellus. Sed id vestibulum erat, sed eleifend est.\
+                            Sed in erat eu odio pharetra ullamcorper commodo finibus justo. Vestibulum interdum semper arcu, sit amet porta massa rutrum eu.\
+                            Nulla accumsan diam eget consectetur auctor.",
+
+    ProductCode: "006",
+    ProductColors: ["7C3E29", "874E3B", "5C4736", "322423", "322423", "5C4736", "5C4736", "322423", "322423", "322423", "5C4736", "5C4736"],
+    ProductColorCodes: ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012"],
+    imgsrc: bagsrc3,
+    carouselimageSources: [bagsrc1, bagsrc2, bagsrc3, bagsrc2, bagsrc3],
+    carouselimageAlts: ["bag1", "bag2", "bag3", "bag2", "bag3"],
+    ProductShortDescription: "Leather, Back"
+  }
+  ]
 
 class HomeScreen extends React.Component{
 
@@ -109,7 +182,7 @@ class HomeScreen extends React.Component{
       for(let i = 0; i < totalProducts; ++i)
       {
         Cols.push(
-            <Col md={4} key={"Product" + i + "Col"} className = "homescreen__products">
+            <Col onClick={() => this.props.OpenProductPageHandler(Products[i])} md={4} key={"Product" + i + "Col"} className = "homescreen__products">
               <ProductDesktop 
                 ProductID={"Product" + Products[i].ProductCode}
                 ProductInfo={Products[i]}
@@ -173,7 +246,7 @@ class HomeScreen extends React.Component{
       for(let i = 0; i < totalProducts; ++i)
       {
         Cols.push(
-            <Col xs={6} key={"Product" + i + "Col"} className = "homescreen__products">
+            <Col onClick={() => this.props.OpenProductPageHandler(Products[i])} xs={6} key={"Product" + i + "Col"} className = "homescreen__products">
               <ProductMobile 
                 ProductID={"Product" + Products[i].ProductCode}
                 ProductInfo={Products[i]}
@@ -217,7 +290,7 @@ class HomeScreen extends React.Component{
       for(let i = 0; i < totalProducts; ++i)
       {
         Cols.push(
-            <Col xs={4} key={"Product" + i + "Col"} className = "homescreen__products">
+            <Col onClick={() => this.props.OpenProductPageHandler(Products[i])} xs={4} key={"Product" + i + "Col"} className = "homescreen__products">
               <ProductMobile 
                 ProductID={"Product" + Products[i].ProductCode}
                 ProductInfo={Products[i]}

@@ -125,7 +125,7 @@ class SortFilter extends React.Component
                                         <span>{this.state.sort_label}</span>
                                     </Col>
                                     <Col lg={4} xs={12} className="dropdownButton">
-                                        <DropdownButton id="Filters" variant="secondary" title={this.state.SortTitle} className="DropDownButton">
+                                        <DropdownButton id="Sorting" variant="secondary" title={this.state.SortTitle} className="DropDownButton">
                                             {SortDropdowns}
                                         </DropdownButton>
                                     </Col>

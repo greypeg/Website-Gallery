@@ -8,28 +8,6 @@ body{
 button:hover{
   cursor: pointer;
 }
-.Navbar .leftSide #hidden{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 230px;
-  
-}
-.Navbar .leftSide #hidden a{
-  margin: 5px;
-  font-size:25px;
-}
-
-body{
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-button:hover{
-  cursor: pointer;
-}
 
 @media only screen and (max-width: 850px){
   .Navbar .rightSide .links a{

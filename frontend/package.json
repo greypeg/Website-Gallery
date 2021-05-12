@@ -1,5 +1,6 @@
 {
-  "name": "site_project",
+  "name": "pchanoutsis.com",
+  "homepage": "https://www.pchanoutsis.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

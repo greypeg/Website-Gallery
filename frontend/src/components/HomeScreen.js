@@ -1,32 +1,29 @@
-import "./HomeScreen.css";
-import Product from "./Product"
+import React from "react";
+import ProductGallery from "./ProductGallery";
+import ItemCarousel from "./itemCarousel";
+import SortFilter from "./Sort_Filters";
 
-
-// Components
-
-
-//Actions
-//import { getProducts as listProducts } from "../redux/actions/productActions";
-
-const HomeScreen = () => {
-  //const dispatch = useDispatch();
-
-  //const getProducts = useSelector((state) => state.getProducts);
-  //const { products, loading, error } = getProducts;
-
-  //(() => {
-    //dispatch(listProducts());
-  //}, [dispatch]);
-
-  return (
-    <div className="homescreen">
-      <div className="homescreen__products">
-        <Product/>
-        <Product/>
-        <Product/>
-      </div>
-    </div>
-  );
-};
+class HomeScreen extends React.Component{
+    render()
+    {
+        return(
+            <div>  
+                <ItemCarousel key="HomeCarousel" backendIP = {this.props.backendIP}/>
+                <SortFilter key="SortFilters" 
+                    changeSelectedCategory = {(number) => this.props.changeSelectedCategory(number)} 
+                    changeSelectedSorting = {(number) => this.props.changeSelectedSorting(number)}
+                />
+                <ProductGallery key="ProductGallery"
+                    OpenProductPageHandler={this.props.OpenProductPageHandler}
+                    windowWidth={this.props.windowWidth}
+                    displayedItems={this.props.displayedItems}
+                    categorySelected={this.props.categorySelected}
+                    sortingSelected={this.props.sortingSelected}
+                    backendIP = {this.props.backendIP}
+                />
+            </div>
+        )
+    }
+}
 
 export default HomeScreen;

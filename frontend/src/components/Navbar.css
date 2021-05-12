@@ -8,47 +8,95 @@
     color:white;
 }
 
-.links a{
-    text-decoration: underline;
-    text-decoration-style: solid;
-    font-family: 'Redressed';
-    font-size: 36px;
-    color: white;
-    text-decoration-skip-ink: none;
+.ham{
+    display: none;
 }
-.links a:hover{
-    text-decoration: none;
+@media only screen and (max-width: 3840px){
+    .Navbar .leftSide .ham{
+        display: none;
+    }
+    .links a{
+        text-decoration: underline;
+        text-decoration-style: solid;
+        font-family: 'Redressed';
+        font-size: 36px;
+        color: white;
+        text-decoration-skip-ink: none;
+    }
+
+    button{
+        display:none;
+    }
+    .logo{
+        height:73px;
+    }
+
+    .centerSide, .rightSide{
+        padding-top: .5%;
+        padding-bottom: .5%;
+    }
+    .centerSide input{
+        height: 50px;
+        width: 80%;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+    }
+    
+    .links a:hover{
+        text-decoration: none;
+    }
 }
-.Navbar .rightSide{
-    color:black;
+@media only screen and (max-width: 1730px){
+    .links a{
+      font-size: 30px;
+    }}
+
+@media only screen and (max-width: 1330px)
+{
+    .links a{
+     font-size:30px;
+    }
 }
-.rightSide button{
-    width: 70px;
-    height: 32px;
-    font-size: 16px;
-    background-color: #72A0C1;
-    text-decoration: none;
-    outline:none;
-    transition-duration: 0.5s;
-    cursor: pointer;
-    border-radius: 6px;
+@media only screen and (max-width: 1200px)
+{
+    .links a{
+     font-size:25px;
+    }
+}
+@media only screen and (max-width: 1000px)
+{
+    .links a{
+     font-size:25px;
+    }
+}
+@media only screen and (max-width: 761px){
+    .links a{
+        font-size:25px;
+    }
+}
+@media only screen and (max-width: 650px)
+{
+    .Navbar .leftSide .ham{
+        display: initial;
+    }
+    .links a{
+    display: none;
+    }
+    .logocontainer{
+        display: none;
+    }
+    .centerSide{
+        justify-content: center;
+    }
+    .centerSide input{
+        margin-top: 5px;
+        width: 100%;
+        height: 40px;
+    }
 }
 
-.centerSide, .rightSide{
-    padding-top: .5%;
-    padding-bottom: .5%;
-}
-.centerSide .iconify{
-    margin-left: -8%;
-    height: auto;
-}
-.centerSide input{
-    height: 50px;
-    width: 550px;
-    border: none;
-    border-radius: 10px;
-    
-    background-color: white;
-}
+
+
 /* background: url('https://api.iconify.design/bx:bx-search.svg') no-repeat right center / contain; */
 .Navbar .centerSide .iconify { color:gray;}

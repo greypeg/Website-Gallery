@@ -3,12 +3,20 @@
     padding: 1rem;
     background-color:#404040;
     color: #FFFFFF;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
   }
 
   .copyrights{
-    float:right;
+    padding-right: 1%;
+  }
+
+  .icons8Links{
+    font-size: 8px;
+  }
+  
+  .icons8Links a{
+    font-size:8px;
+    color: white;
+    text-decoration: none;
   }

@@ -1,0 +1,35 @@
+
+
+@media only screen and (max-width: 2560px)
+{    
+    .CarouselContent{
+        max-height: 400px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1920px)
+{    
+    .CarouselContent{
+        max-height: 360px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px)
+{    
+    .CarouselContent{
+        height: 360px;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 991px)
+{    
+    .CarouselContent{
+        height: 250px;
+        width: 100%;
+        padding: 0% 8%;
+    }
+}

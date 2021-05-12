@@ -1,0 +1,197 @@
+.ProductContainer{
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(69, 69, 69, 0.5);
+    height: 100%;
+    text-align: center;
+}
+
+.pictureOverlayHeader{
+    display: none;
+}
+
+.pictureOverlayColourText{
+    display: none;
+}
+
+.pictureOverlayProductID{
+    display:none;
+}
+
+.colorDot{
+    display:none;
+}
+
+.colorDiv{
+    display: none;
+}
+@media only screen and (max-width: 3840px) {
+ /*TODO*/   
+}
+@media only screen and (max-width: 2560px)
+{
+    .PictureStyle{
+        height: 348px;
+        width: auto;
+    }
+
+
+
+    .ProductContainer:hover .TextStyle {
+        opacity: 0.2;
+    }
+
+    .ProductContainer:hover .PictureStyle{
+        opacity: 0.3;
+    }
+
+    .ProductContainer:hover .pictureOverlayHeader{
+        display: block;
+        position: relative;
+        margin-top: -50%;
+        font-size: x-large;
+        word-break: keep-all;
+        text-align: center;
+        color: #454545;
+        font-weight: bold;
+    }
+    
+    .ProductContainer:hover .pictureOverlayColourText{
+        display: flex;
+        position: relative;
+        margin-top: 8%;
+        font-size: large;
+        word-break: keep-all;
+        text-align: left;
+        font-weight: 500;
+        justify-content: center;
+        align-self: center;
+        color: #454545;
+        font-style: normal;
+    }
+
+    .ProductContainer:hover .pictureOverlayProductID{
+        display: flex;
+        position: relative;
+        font-size: large;
+        word-break: keep-all;
+        text-align: left;
+        font-weight: 500;
+        justify-content: center;
+        margin-top: 5%;
+        color: #454545;
+        font-style: normal;
+    }
+
+    .ProductContainer:hover .colorDiv{
+        display: flex;
+        position: relative;
+        margin-top: 2%;
+        margin-left: 30%;
+        width: 40%;
+        text-align: center;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ProductContainer:hover .colorDot{
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-right: 3%;
+        border-color: white;
+        border-width: 2px;
+        border-style: solid;
+    }
+}
+
+@media only screen and (max-width: 1920px)
+{
+    .PictureStyle{
+        height: 350px;
+        max-width: 100%;
+        margin-left: 0%;
+    }
+
+    .ProductContainer:hover .TextStyle {
+        opacity: 0.2;
+    }
+
+    .ProductContainer:hover .PictureStyle{
+        opacity: 0.3;
+    }
+
+    .ProductContainer:hover .pictureOverlayHeader{
+        display: block;
+        position: relative;
+        margin-top: -70%;
+        font-size: x-large;
+        word-break: keep-all;
+        text-align: center;
+        margin-left: 0%;
+        ;
+    }
+    
+    .ProductContainer:hover .pictureOverlayColourText{
+        display: block;
+        position: relative;
+        margin-top: 15%;
+        font-size: large;
+        word-break: keep-all;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .ProductContainer:hover .pictureOverlayProductID{
+        display: block;
+        position: relative;
+        font-size: large;
+        word-break: keep-all;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .ProductContainer:hover .colorDiv{
+        display: block;
+        position: relative;
+        margin-top: 3%;
+        margin-left: 25%;
+        width: 50%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ProductContainer:hover .colorDot{
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-right: 3%;
+        border-color: white;
+        border-width: 2px;
+        border-style: solid;
+    }
+
+    .ProductContainer:hover {
+        max-height: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 1366px)
+{
+    .PictureStyle{
+        height: 280px;
+        max-width: 100%;
+        margin-left: 0%;
+    }
+}
+
+.TextStyle{
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #4545459F;
+    background-blend-mode: lighten;
+}

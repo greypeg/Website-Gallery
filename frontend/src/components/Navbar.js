@@ -1,40 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Navbar.css'
-import logoe from '../images/logoe.png';
-
+import logoe from './images/logoe.png';
+import {Container, Row, Col, InputGroup, FormControl} from 'react-bootstrap'
+import Hamburger from 'hamburger-react'
 
 function Navbar() {
-
-
+    const [isOpen, setOpen] = useState(false)
     return (
-        <div className="Navbar container-fluid pr-0 pl-0">
-            <div className="row">
-                <div className="col-lg-1"></div>
-                <div className="col-lg-2 leftSide">
-                    <a href="/">
-                        <img src={logoe} alt="Logo" style={{ height: 73 }}/>
-                    </a>
-                </div>
-                <div className="col-lg-4 centerSide">
-                    <input type="search" placeholder="  Search..."></input>
-                    <span className="iconify" data-icon="bx:bx-search" data-inline="false"></span>
-                </div>
-                <div className="col-lg-4 rightSide links">
-                    <div className="row">
-                        <div className="col-lg">
-                            <a href="/home">Home</a>
-                        </div>
-                        <div className="col-lg">
-                            <a href="/aboutus" style={{marginLeft: '-12%'}}>About us</a>
-                        </div>
-                        <div className="col-lg">
-                            <a href="/contact">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-1"></div>
-            </div>
-        </div>
+        <Container fluid className="Navbar">
+            <Row>
+                <Col lg={1}></Col>
+                <Col lg={2}  md={3} sm={3} xs={2} className="leftSide">
+                    <div className=".d-none .d-xl-block">  <a href="/">
+                        <div className="logocontainer">
+                        <img src={logoe} alt="Logo" className="logo"/></div>
+                    </a></div>
+                    <div className="ham"><Hamburger className="ham" toggled={isOpen} toggle={setOpen} /></div>
+                </Col>
+                <Col lg={3} md={3} sm={3} xs={10}className="centerSide">
+                    <InputGroup >
+                        <FormControl
+                        placeholder="Search..."
+                        aria-label="Search..."
+                        aria-describedby="basic-addon2"
+                        />
+                    </InputGroup>
+                </Col>
+                <Col lg={6} md={6} sm={6} xs="auto" className="rightSide links" id={isOpen ? "hidden" : ""}>
+                    <Row id={isOpen ? "wrapper" : ""}>
+                        <Col lg={true} md={true} sm={true} xs={true} className="">
+                            <a href="/">Home</a>
+                        </Col>
+                        <Col lg={true} md={true} sm={true} xs={true} className="">
+                            <a href="/aboutus">About</a>
+                        </Col>
+                        <Col lg={true} md={true} sm={true} xs={true} className="">
+                            <a href="/contactus">Contact</a>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

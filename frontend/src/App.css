@@ -8,53 +8,45 @@ body{
 button:hover{
   cursor: pointer;
 }
-.Navbar .leftSide #hidden{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: 230px;
-  
-}
-.Navbar .leftSide #hidden a{
-  margin: 5px;
-  font-size:25px;
-}
 
 @media only screen and (max-width: 850px){
-  .Navbar .leftSide .links a{
+  .Navbar .rightSide .links a{
     font-size:20px;
   }
 }
 @media only screen and (max-width: 750px){
-  .Navbar .leftSide .links a{
+  .Navbar .rightSide .links a{
     font-size:15px;
   }
 }
-@media only screen and (max-width: 650px){
-  .Navbar .leftSide button{
-    display:flex;
-    background-color: white; 
-    border: 2px solid #72A0C1;
-    text-decoration: none;
-    outline:none;
-    transition-duration: 0.5s;
-    cursor: pointer;
-    border-radius: 6px;
-  }
-  
-  .Navbar .leftSide .links {
-    display:none;
-  }
-
-  .Navbar .leftSide #hidden{
-    position: absolute;
+@media only screen and (max-width: 650px){  
+  #hidden{
+    position: inherit;
     left:0px;
     top:80px;
-    height: 230px;
+    height: 220px;
     width: 100%;
     background-color: #C29372;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left:0;
   }
-}
-@media only screen and (max-width: 320px){
-
+  #wrapper{
+    position: absolute;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  #hidden a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left:0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

@@ -1,0 +1,54 @@
+.homescreen {
+    max-width: 1300px;
+    margin: 1rem auto;
+  }
+  
+  .homescreen__title {
+    font-size: 1.5rem;
+    color: #171717;
+    margin-bottom: 1rem;
+    margin-left: 8px;
+  }
+
+
+  @media only screen and (max-width: 2560px)
+  {
+    .rowSize
+    {
+      width:100%;
+    }
+
+    .homescreen__products {
+      margin-top: 1%;
+    }
+  }
+
+  @media only screen and (max-width: 1920px)
+  {
+    .rowSize{
+      width: auto;
+    }
+
+    .homescreen__products {
+      margin-top: 1.5%;
+    }
+  }
+
+  @media only screen and (max-width: 1366px)
+  {
+    .rowSize{
+      margin-left: 1%;
+      width: auto;
+    }
+
+    .homescreen__products {
+      display:flex;
+      justify-content: center;
+      margin-top: 1%;
+    }
+
+  }
+
+
+
+

@@ -7,7 +7,16 @@ body{
     background-color:#C4C4C4;
     color: #FFFFFF;
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    max-height: 25px;
+    max-height: 35px;
+}
+#hid{
+    text-align: center;
 }
 
-.iconify { width: 25px; height: 20px; }
+.iconDiv{
+    padding-top: 4px;
+}    
+
+
+
+

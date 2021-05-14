@@ -88,7 +88,7 @@ class ProductMobile extends React.Component{
         return(
             <div fluid-fixed="true" id={this.props.ProductInfo.ProductCode} className="mobileProductContainer">
                 <Row className = "imageRow">
-                    <Col xs={12}>
+                    <Col xs={12} className = "imageCol">
                         <img src={ProductFolder + this.props.ProductInfo.imgsrc} alt={this.props.ProductInfo.ProductName}></img>
                         <span className="spanMobile" style={{backgroundColor: "grey", marginLeft:"5%", marginTop:"3px", width: "90%", height: "2px"}}></span>
                     </Col>

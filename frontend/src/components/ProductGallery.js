@@ -21,7 +21,6 @@ class ProductGallery extends React.Component{
             .then((response) => response.json())
             .then((data) => this.setState({productInfo: data}, ()=>{this.initProducts()}))
     
-    console.log("http://" + this.props.backendIP + ":4000/");
   }
 
   constructor(props)
@@ -70,7 +69,6 @@ class ProductGallery extends React.Component{
   // We will query the server with a specified category, sorting and we will display a number of items equal to totalProducts.
   initProducts()
   {
-    console.log(this.state.productInfo);
     if(this.state.productInfo.length === 0) return 0;
 
     var totalProducts = this.state.NumberOfDisplayedItems;

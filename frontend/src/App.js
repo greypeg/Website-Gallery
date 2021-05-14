@@ -51,7 +51,7 @@ class App extends React.Component {
       previousPage: Pages.Home,
       MainContent: [],
       ProductPageInfo: undefined,
-      publicIP: "172.104.130.5",
+      publicIP: "192.168.1.5",
     };
 
     this.changeSelectedCategory = this.changeSelectedCategory.bind(this);

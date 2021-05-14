@@ -54,8 +54,6 @@ class ItemCarousel extends React.Component
                 </Carousel.Item>
             )
         }
-
-        console.log(CarouselSlides);
         this.setState({carouselReady: true, carouselSlides: CarouselSlides});
     }
 

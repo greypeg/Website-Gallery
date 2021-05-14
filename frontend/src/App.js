@@ -1,6 +1,5 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import publicip from 'public-ip'
 import './App.css';
 import './components/NavbarMini.css'
 import Navbar from './components/Navbar'
@@ -10,7 +9,6 @@ import ProductPage from "./components/ProductPage";
 import Footer from "./components/Footer"
 import About from "./components/About"
 import Contact from "./components/Contact"
-import publicIp from "public-ip";
 
 const CategoriesEnum = {
   Handbags    : 0,

@@ -1,7 +1,6 @@
 import "./ProductMobile.css"
 import React from "react";
 import {Row, Col} from 'react-bootstrap'
-import bagsrc1 from "./images/bag1.jpg"
 
 class ProductMobile extends React.Component{
 

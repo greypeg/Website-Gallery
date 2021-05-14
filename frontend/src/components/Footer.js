@@ -9,13 +9,13 @@ function Footer() {
         <Row>
           <Col xs={2} className="icons8Links">
             <div>
-              <a target="_blank" href="undefined/icons/set/email--v1">Email icon</a> icon by <a target="_blank" href="">Icons8</a>
+              <a target="_blank" rel="noreferrer" href="undefined/icons/set/email--v1">Email icon</a> icon by <a target="_blank" rel="noreferrer" href="https://icons8.com/">Icons8</a>
             </div>
             <div>
-              <a target="_blank" href="undefined/icons/set/address">Address icon</a> icon by <a target="_blank" href="">Icons8</a>
+              <a target="_blank" rel="noreferrer" href="undefined/icons/set/address">Address icon</a> icon by <a target="_blank" rel="noreferrer" href="https://icons8.com/">Icons8</a>
             </div> 
             <div>
-              <a target="_blank" href="undefined/icons/set/cell-phone--v1">Cell Phone icon</a> icon by <a target="_blank" href="">Icons8</a>
+              <a target="_blank" rel="noreferrer" href="undefined/icons/set/cell-phone--v1">Cell Phone icon</a> icon by <a target="_blank" rel="noreferrer" href="https://icons8.com/">Icons8</a>
             </div>                     
           </Col>
           <Col xs={7}></Col>

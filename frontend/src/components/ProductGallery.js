@@ -90,12 +90,13 @@ class ProductGallery extends React.Component{
       {
         Cols.push(
             <Col md={4} key={"Product" + this.state.productInfo[i].ProductCode + "Col"} className = "homescreen__products">
-              <Link to={'/Products?ProductID=' + this.state.productInfo[i].ProductCode}>
-              <ProductDesktop 
-                ProductID={"Product" + this.state.productInfo[i].ProductCode}
-                ProductInfo={this.state.productInfo[i]}
-              ></ProductDesktop>
-            </Link>
+              <Link to={'/Products?ProductID=' + this.state.productInfo[i].ProductCode} style = {{textDecoration: "none"}}>
+                <ProductDesktop 
+                  ProductID={"Product" + this.state.productInfo[i].ProductCode}
+                  ProductInfo={this.state.productInfo[i]}
+                >
+                </ProductDesktop>
+              </Link>
           </Col>
         );
       }

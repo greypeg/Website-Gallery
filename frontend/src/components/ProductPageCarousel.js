@@ -9,7 +9,8 @@ import { Carousel } from 'react-responsive-carousel';
 *   this.props = {
 *       ProductImageSources: Array of Strings (select 1 as default image source),
 *       ProductImageAlts: Array of Strings,
-        ProductFolder: String
+        ProductFolder: String,
+        ProductColors: Array of Strings,
 *       }
 */
 
@@ -29,7 +30,8 @@ class ProductPageCarousel extends React.Component{
 
     initCarousel(){
         var ProductFolderPath = "productimages/" + this.props.ProductFolder + "/";
-        for(let i = 0; i<this.props.ProductImageSources.length; ++i)
+        var totalImages = this.props.ProductImageSources.length;
+        for(let i = 0; i<totalImages; ++i)
         {
             this.state.imagesArray.push(
             <div key={this.props.ProductImageSources[i]}>

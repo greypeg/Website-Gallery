@@ -66,6 +66,7 @@ class ProductPage extends React.Component{
                                     ProductFolder = {this.state.productInfo.ProductFolder} 
                                     ProductImageSources={this.state.productInfo.carouselimageSources} 
                                     ProductImageAlts={this.state.productInfo.carouselimageAlts}
+                                    ProductColors = {this.state.productInfo.ProductColorCodes}
                                 />
                             </Col>
                             <Col xl={6} sm={12}>

@@ -21,6 +21,7 @@ class ProductInfo extends React.Component{
             productID: this.props.ProductInfo.ProductCode,
             productTotalColors: this.props.ProductInfo.ProductColors.length,
             colorDots: [],
+            selectedDotColor: "Click a color above to reveal its codename."
         }
 
         this.initiateColorsForProduct = this.initiateColorsForProduct.bind(this);
@@ -41,6 +42,7 @@ class ProductInfo extends React.Component{
                             backgroundClip: "content-box"}}
                 alt = {this.props.ProductInfo.ProductColorCodes[i]}
                 title = {"Color code: " + this.props.ProductInfo.ProductColorCodes[i]}
+                onClick = {(e) => {this.setState({selectedDotColor: e.target.title})}}
                 >{this.props.ProductInfo.ProductColors[i].match("#FFFFFF") ? "*" : ''}</span>)
         }
     }
@@ -80,6 +82,9 @@ class ProductInfo extends React.Component{
                         <div className="ColorDiv">
                             {this.state.colorDots}
                         </div>
+                        <span className="SelectedDotTitle">
+                            {this.state.selectedDotColor}
+                        </span>
                     </Col>
                     <Col lg={3}></Col>
                 </Row>

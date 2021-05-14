@@ -41,6 +41,7 @@
     
     .links a:hover{
         text-decoration: none;
+        color: white;
     }
 }
 @media only screen and (max-width: 1730px){

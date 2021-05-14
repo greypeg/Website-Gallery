@@ -1,7 +1,10 @@
 
 @media only screen and (max-width:3840px)
 {
-
+    .product-carousel{
+        width: 800px;
+        margin-top: 10%;
+    }
 }
 
 @media only screen and (max-width:2560px)
@@ -10,12 +13,13 @@
         width: 700px;
         margin-top: 10%;
     }
+    
 }
 
 @media only screen and (max-width:1920px)
 {
     .product-carousel{
-        width: 600px;
+        width: auto;
         margin-top: 10%;
     }
 

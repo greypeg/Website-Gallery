@@ -46,7 +46,8 @@ class ProductPageCarousel extends React.Component{
                 <Carousel 
                     autoPlay  
                     interval="5000" transitionTime="1000" 
-                    className="product-carousel">
+                    className="product-carousel"
+                    showArrows>
                     
                     {this.state.imagesArray}
                 

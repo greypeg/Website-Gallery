@@ -29,7 +29,12 @@ router.route("/Search").get((req,res) => {
     if(searchParam.length === 0)
     {
         const folder_regex = new RegExp("Product", 'i');
-        PierreSiteModel.find({ProductFolder: {$regex: folder_regex}},(err, result) => {
+        const recyclable_bag = new RegExp("SpaceBag", 'i');
+        PierreSiteModel.find({$or: [
+            {ProductFolder: {$regex: folder_regex}},
+            {ProductName: {$regex: recyclable_bag}}
+            ]}
+            ,(err, result) => {
             if(err) res.send(err);
             else res.send(result);
         })
